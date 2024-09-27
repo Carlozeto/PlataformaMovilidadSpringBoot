@@ -1,10 +1,12 @@
 package com.example.demo.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class route_parade {
 
+	@Id
 	private int routeId;
 	private int paradeId;
 	

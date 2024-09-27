@@ -1,9 +1,11 @@
 package com.example.demo.entities;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class bus {
 
+	@Id
 	private String busPlaque;
 	private String busLicenseId;
 	private String busManufacturer;

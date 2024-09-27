@@ -1,10 +1,12 @@
 package com.example.demo.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class driver {
 
+	@Id
 	private String driverId;
     private String driverFirstName;
     private String driverLastName;
