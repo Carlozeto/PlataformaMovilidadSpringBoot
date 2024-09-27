@@ -8,7 +8,7 @@ public class BusController{
 
 	@GetMapping("/bus")
 	public String init() {
-		return "/admin/bus/index";
+		return "admin/bus/index";
 	}
 	
 }
