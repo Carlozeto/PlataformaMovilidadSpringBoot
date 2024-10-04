@@ -28,4 +28,9 @@ public class BusController{
 		return "admin/bus/index";
 	}
 	
+	@GetMapping("/addBus")
+	public String addBus() {
+		return "admin/bus/add";
+	}
+	
 }
