@@ -21,6 +21,10 @@ public class bus {
 	private int busEnterpriseId;
 	private int busRouteId;
 	
+	public bus(){
+		   super();
+		}
+	
 	public bus(String busPlaque, String busLicenseId, String busManufacturer, String busManufacturerModel, String busCC,
 			String busColor, String busVehicleClass, String busMotorId, String busChasisId, String busCapacity,
 			String busOwner, String busDriverId, int busEnterpriseId, int busRouteId) {
