@@ -16,7 +16,7 @@ public class bus {
 	private String busMotorId;
 	private String busChasisId;
 	private String busCapacity;
-	private String busOwner;
+	private String busOwnerId;
 	private String busDriverId;
 	private int busEnterpriseId;
 	private int busRouteId;
@@ -27,7 +27,7 @@ public class bus {
 	
 	public bus(String busPlaque, String busLicenseId, String busManufacturer, String busManufacturerModel, String busCC,
 			String busColor, String busVehicleClass, String busMotorId, String busChasisId, String busCapacity,
-			String busOwner, String busDriverId, int busEnterpriseId, int busRouteId) {
+			String busOwnerId, String busDriverId, int busEnterpriseId, int busRouteId) {
 		super();
 		this.busPlaque = busPlaque;
 		this.busLicenseId = busLicenseId;
@@ -39,7 +39,7 @@ public class bus {
 		this.busMotorId = busMotorId;
 		this.busChasisId = busChasisId;
 		this.busCapacity = busCapacity;
-		this.busOwner = busOwner;
+		this.busOwnerId =  busOwnerId;
 		this.busDriverId = busDriverId;
 		this.busEnterpriseId = busEnterpriseId;
 		this.busRouteId = busRouteId;
@@ -85,6 +85,14 @@ public class bus {
 	public String getBusColor() {
 		return busColor;
 	}
+	public String getBusOwnerId() {
+		return busOwnerId;
+	}
+
+	public void setBusOwnerId(String busOwnerId) {
+		this.busOwnerId = busOwnerId;
+	}
+
 	public void setBusColor(String busColor) {
 		this.busColor = busColor;
 	}
@@ -111,12 +119,6 @@ public class bus {
 	}
 	public void setBusCapacity(String busCapacity) {
 		this.busCapacity = busCapacity;
-	}
-	public String getBusOwner() {
-		return busOwner;
-	}
-	public void setBusOwner(String busOwner) {
-		this.busOwner = busOwner;
 	}
 	public String getBusDriverId() {
 		return busDriverId;

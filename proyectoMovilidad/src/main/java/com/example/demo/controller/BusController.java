@@ -21,7 +21,7 @@ public class BusController{
 	@Autowired
 	public BusService busService;
 
-	@GetMapping("/listBus")
+	@GetMapping({"/listBus", "/"})
 	public String listBus(Model model) {
 		try {
 			List<bus> listBus = busService.findAll();
@@ -33,13 +33,16 @@ public class BusController{
 		return "admin/bus/index";
 	}
 	
+	@GetMapping("/formBus")
+	public String mostrarFormulario(Model model) { 
+		bus bus1 = new bus();
+		model.addAttribute("bus", bus1);
+	    return "admin/bus/add";
+	}
+	
 	@PostMapping("/addBus")
-	public String addBus(@ModelAttribute("bus") bus bus) { 
-	    try {
-	        busService.save(bus); 
-	    } catch (Exception e) {
-	        System.out.println("Error al agregar el bus: " + e);
-	    }
+	public String addBus(@ModelAttribute("bus") bus Bus) { 
+	    busService.save(Bus);
 	    return "redirect:/listBus";
 	}
 	
