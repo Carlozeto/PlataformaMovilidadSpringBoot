@@ -62,13 +62,27 @@ public class BusController{
 	    }
 	}
 	
-	@PostMapping("/updateBus")
-	public String updateBus(@ModelAttribute("bus") bus bus) {
-	    try {
-	        busService.save(bus); 
-	    } catch (Exception e) {
-	        System.out.println("Error al actualizar el bus: " + e);
-	    }
+	@PostMapping("/updateBus/{id}")
+	public String updateBus(@PathVariable("id") String id, @ModelAttribute("bus") bus Bus, Model model) {
+		 Optional<bus> busFind = busService.findById(id);
+		    if (busFind.isPresent()) {
+		    	bus busUpd = busFind.get(); 
+		    	busUpd.setBusPlaque(Bus.getBusPlaque());
+		    	busUpd.setBusLicenseId(Bus.getBusLicenseId());
+		    	busUpd.setBusManufacturer(Bus.getBusManufacturer());
+		    	busUpd.setBusManufacturerModel(Bus.getBusManufacturerModel());
+		    	busUpd.setBusCC(Bus.getBusCC());
+		    	busUpd.setBusColor(Bus.getBusColor());
+		    	busUpd.setBusVehicleClass(Bus.getBusVehicleClass());
+		    	busUpd.setBusMotorId(Bus.getBusMotorId());
+		    	busUpd.setBusChasisId(Bus.getBusChasisId());
+		    	busUpd.setBusCapacity(Bus.getBusCapacity());
+		    	busUpd.setBusOwnerId(Bus.getBusOwnerId());
+		    	busUpd.setBusDriverId(Bus.getBusDriverId());
+		    	busUpd.setBusEnterpriseId(Bus.getBusEnterpriseId());
+		    	busUpd.setBusRouteId(Bus.getBusRouteId());
+		    	busService.save(busUpd);
+		    }
 	    return "redirect:/listBus";
 	}
 	

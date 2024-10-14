@@ -1,0 +1,88 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://wwww.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<title>Edit a Bus</title>
+	<meta charset="UTF-8">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+	<h2 style="text-align: center;">Edit a Bus</h2>
+	<div style="width: 80%; margin: auto; padding: auto;">
+		<form th:action="@{/updateBus/{id}(id=${bus.busPlaque})}" th:object="${bus}" method="POST">
+		  <div class="mb-3">
+		    <label for="busPlaque" class="form-label">Bus Plaque</label>
+		    <input type="text" class="form-control" id="busPlaque" aria-describedby="busPlaqueDesc" th:field="*{busPlaque}"> 
+		    <div id="busPlaqueDesc" class="form-text">Input the bus plaque.</div>
+		  </div>
+		  <div class="mb-3">
+			<label for="busLicense" class="form-label">Bus License Id</label>
+			<input type="text" class="form-control" id="busLicenseId" aria-describedby="busLicenseIdDesc" th:field="*{busLicenseId}">
+			<div id="busLicenseIdDesc" class="form-text">Input the bus license identification.</div>
+		  </div>
+		  <div class="mb-3">
+			<label for="busManufacturer" class="form-label">Bus Manufacturer</label>
+			<input type="text" class="form-control" id="busManufacturer" aria-describedby="busManufacturerDesc" th:field="*{busManufacturer}">
+			<div id="busManufacturerDesc" class="form-text">Input the bus manufacturer.</div>
+		  </div>
+		  <div class="mb-3">
+		  	<label for="busManufacturerModel" class="form-label">Bus Manufacturer Model</label>
+		  	<input type="text" class="form-control" id="busManufacturerModel" aria-describedby="busManufacturerModelDesc" th:field="*{busManufacturerModel}">
+		  	<div id="busManufacturerModelDesc" class="form-text">Input the bus manufacturer model.</div>
+		  </div>
+		  <div class="mb-3">
+		  	<label for="busCC" class="form-label">Bus CC</label>
+		  	<input type="text" class="form-control" id="busCC" aria-describedby="busCCDesc" th:field="*{busCC}">
+		  	<div id="busCCDesc" class="form-text">Input the bus CC.</div>
+		  </div>
+		  <div class="mb-3">
+		  	<label for="busColor" class="form-label">Bus Color</label>
+		  	<input type="text" class="form-control" id="busColor" aria-describedby="busColorDesc" th:field="*{busColor}">
+		  	<div id="busColorDesc" class="form-text">Input the bus color.</div>
+		  </div>
+		  <div class="mb-3">
+		  	<label for="busVehicleClass" class="form-label">Bus Vehicle class</label>
+		  	<input type="text" class="form-control" id="busVehicleClass" aria-describedby="busVehicleClassDesc" th:field="*{busVehicleClass}">
+		  	<div id="busVehicleClassDesc" class="form-text">Input the bus vehicle class.</div>
+		  </div>
+		  <div class="mb-3">
+		  	<label for="busMotorId" class="form-label">Bus Motor Id</label>
+		  	<input type="text" class="form-control" id="busMotorId" aria-describedby="busMotorIdDesc" th:field="*{busMotorId}">
+		  	<div id="busMotorIdDesc" class="form-text">Input the bus motor identification.</div>
+		  </div>
+		  <div class="mb-3">
+		  	<label for="busChasisId" class="form-label">Bus Chasis Id</label>
+		  	<input type="text" class="form-control" id="busChasisId" aria-describedby="busChasisIdDesc" th:field="*{busChasisId}">
+		  	<div id="busChasisIdDesc" class="form-text">Input the bus chasis id.</div>
+		  </div>
+		  <div class="mb-3">
+		  	 <label for="busCapacity" class="form-label">Bus Capacity</label>
+		     <input type="text" class="form-control" id="busManufacturer" aria-describedby="busCapacityDesc" th:field="*{busCapacity}">
+		  	 <div id="busCapacityDesc" class="form-text">Input the bus capacity.</div>
+		  </div>
+		  <div class="mb-3">
+		  	<label for="busOwnerId" class="form-label">Bus Owner Id</label>
+		  	<input type="text" class="form-control" id="busOwnerId" aria-describedby="busOwnerIdDesc" th:field="*{busOwnerId}">
+		  	<div id="busOwnerIdDesc" class="form-text">Input the bus owner identification.</div>
+		  </div>
+		  <div class="mb-3">
+		  	<label for="busDriverId" class="form-label">Bus Driver Id</label>
+		  	<input type="text" class="form-control" id="busDriverId" aria-describedby="busDriverIdDesc" th:field="*{busDriverId}">
+		  	<div id="busDriverIdDesc" class="form-text">Input the bus driver identification.</div>
+		  </div>
+		  <div class="mb-3">
+		  	<label for="busEnterpriseId" class="form-label">Bus Enterprise Id</label>
+		  	<input type="text" class="form-control" id="busEnterpriseId" aria-describedby="busEnterpriseIdDesc" th:field="*{busEnterpriseId}">
+		  	<div id="busEnterpriseIdDesc" class="form-text">Input the bus enterprise identification.</div>
+		  </div>
+		  <div class="mb-3">
+		  	<label for="busRouteId" class="form-label">Bus Route Id</label>
+		  	<input type="text" class="form-control" id="busRouteId" aria-describedby="busRouteIdDesc" th:field="*{busRouteId}">
+		  	<div id="busRouteIdDesc" class="form-text">Input the bus route identification.</div>
+		  </div>	  
+		  <button type="submit" class="btn btn-primary">Edit</button>
+		</form>
+	</div>
+</body>
+</html>

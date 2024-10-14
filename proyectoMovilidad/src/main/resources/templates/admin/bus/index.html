@@ -16,12 +16,16 @@
 			<th>Placa</th>
 			<th>Manufacturador</th>
 			<th>Modelo</th>
+			<th>Acciones</th>
 		</thead>
 		<tbody>
 			<tr th:each="bus:${bus}">
 				<td><font th:text="${bus.busPlaque}"></font></td>
 				<td><font th:text="${bus.busManufacturer}"></font></td>
 				<td><font th:text="${bus.busManufacturerModel}"></font></td>
+				<td>
+					<a th:href="@{/editBus/{busPlaque}(busPlaque=${bus.busPlaque})}">Edit</a>
+				</td>
 			</tr>
 		</tbody>
 	</table>
