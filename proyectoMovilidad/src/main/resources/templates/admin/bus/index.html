@@ -24,7 +24,8 @@
 				<td><font th:text="${bus.busManufacturer}"></font></td>
 				<td><font th:text="${bus.busManufacturerModel}"></font></td>
 				<td>
-					<a th:href="@{/editBus/{busPlaque}(busPlaque=${bus.busPlaque})}">Edit</a>
+					<a th:href="@{/editBus/{busPlaque}(busPlaque=${bus.busPlaque})}" class="btn btn-info">Edit</a>
+					<a th:href="@{/deleteBus/{busPlaque}(busPlaque=${bus.busPlaque})}" class="btn btn-danger">Eliminar</a>
 				</td>
 			</tr>
 		</tbody>

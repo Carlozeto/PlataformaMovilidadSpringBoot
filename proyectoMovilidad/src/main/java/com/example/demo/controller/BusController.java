@@ -86,7 +86,7 @@ public class BusController{
 	    return "redirect:/listBus";
 	}
 	
-	@DeleteMapping("/deleteBus/{id}")
+	@GetMapping("/deleteBus/{id}")
 	public String deleteBus(@PathVariable("id") String id) {
 	    try {
 	        busService.deleteById(id);
