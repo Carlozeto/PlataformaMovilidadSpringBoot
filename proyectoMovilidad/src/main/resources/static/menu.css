@@ -1,0 +1,292 @@
+body {
+		    font-family: "Poppins", sans-serif;
+		    margin: 0;
+		    padding: 0;
+		    box-sizing: border-box;
+		}
+
+		header {
+		    padding: 10px;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		.overBg{
+			width: 80%; 
+			margin: auto; 
+			padding: auto; 
+			z-index: 2; 
+			position: absolute; 
+			top: 50%; 
+			left: 50%; 
+			transform: translate(-50%, -50%);
+		}
+		
+		
+		.titleBus {
+			margin: 0px 0px 1px 0px;
+			background-color: white;
+			font-weight: bold;
+			border-radius: 5px 5px 5px 5px;
+		}
+		
+		.menu-button {
+		    cursor: pointer;
+		}
+
+		#menuIcon {
+		    font-size: 2em;
+		    color: #333;
+		}
+
+		/* Estilos del menú desplegable */
+		.overlay-bg {
+		    height: 100%;
+		    width: 100%;
+		    position: fixed;
+		    z-index: 3;
+		    top: 0;
+		    left: 0;
+		    background-color: rgba(66, 66, 66, 0.7);
+		    display: none;
+		}
+		
+		.main-bg{
+			background-image: url("buseton.png");
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-position: center;
+			background-color: #000000;
+			z-index: 0;
+			filter: blur(8px);
+			-webkit-filter: blur(8px);
+			background-size: 100%;
+			height: 100%;
+			width: 100%;
+		}
+
+		.desplegable {
+		    height: 100%;
+		    width: 0%;
+		    position: fixed;
+		    z-index: 4;
+		    top: 0;
+		    left: 0;
+		    background-color: #1f1f1f;
+		    overflow-x: hidden;
+		    transition: 0.5s;
+		}
+
+		.contenido-menu {
+		    position: absolute;
+		    top: 13%;
+		    width: 100%;
+		    text-align: center;
+		    margin-top: 10px;
+		}
+
+		.contenido-menu a {
+		    padding: 10px 10px 50px 10px;
+		    text-decoration: none;
+		    font-size: 2em;
+		    color: #acacac;
+		    display: block;
+		    transition: 0.3s;
+		}
+
+		.contenido-menu a:hover,
+		.closebtn:hover,
+		.contenido-menu a:focus {
+		    color: #f1f1f1;
+		}
+
+		.closebtn {
+		    position: absolute;
+		    top: 20px;
+		    left: 45px;
+		    font-size: 60px;
+		    cursor: pointer;
+		    color: #acacac;
+		    transition: 0.3s;
+		}
+
+		.boton-menu {
+		    font-size: 3em;
+		    font-weight: bold;
+		    cursor: pointer;
+		    color: #252525;
+		    float: right;
+		    padding: 12px 30px;
+		}
+
+		body.desplegable-abierto {
+		    background-color: rgba(49, 49, 49, 0.7);
+		}
+
+		.menu {
+		    width: 100%;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		}
+
+		#logo {
+		    width: 5%;
+			padding: 0% 2% 0% 0%;
+		}
+
+		.inicio {
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		    padding: 0px;
+		    text-align: center;
+		}
+
+		.contenido-inicio {
+		    width: 90%;
+		    padding-bottom: 2%;
+		    padding-left: 4%;
+		    padding-right: 2%;
+		}
+
+		#Titulo_Texto {
+		    position: relative;
+		    top: 50px;
+		}
+
+		.contenido-inicio h1 {
+		    font-size: 2.3em;
+		    color: #E62B3C;
+		    font-weight: 700;
+		    line-height: 1.5em;
+		    padding-bottom: 5%;
+		}
+
+		.contenido-inicio p {
+		    font-size: 1.2em;
+		    font-weight: 400;
+		    line-height: 1.3em;
+		    padding-bottom: 6%;
+		}
+
+		#grafico-inicio {
+		    width: 80%;
+		    max-width: 400px;
+		}
+
+		#botonCodigo {
+		    background-color: #E62B3C;
+		    color: white;
+		    border: none;
+		    padding: 10px 20px;
+		    font-size: 1.5em;
+		    font-weight: bold;
+		    cursor: pointer;
+		    border-radius: 40px;
+		    margin-top: 6%;
+		}
+
+		footer {
+		    width: 100%;
+		    justify-content: center;
+		    text-align: center;
+		    background-color: #1D1D1B;
+		    padding: 20px 0;
+		}
+
+		#imagen-footer {
+		    width: 10%;
+		    margin-bottom: 10px;
+		}
+
+		.copyrigt {
+		    font-size: 1em;
+		    color: aliceblue;
+		}
+
+		/* Media query para moviles */
+		@media (max-width: 767px) {
+
+		    .desplegable {
+		        position: absolute;
+		        height: auto;
+		        width: 100%;
+		        top: 0px; 
+		        background-color: #1f1f1f;
+		        display: none;
+		        transition: top 0.5s ease-in-out;
+		        max-height: 0;
+		        overflow: hidden;
+		    }
+
+		    .desplegable.abierto {
+		        display: block;
+		        max-height: 40%; /* Ajusta según la cantidad de elementos del menú */
+		        border-radius: 0px 0px 10px 10px;
+		        transition: top 0.5s ease-in-out;
+		    }
+
+		    .contenido-menu {
+		        position: static;
+		        margin-top: 10%;
+		        margin-bottom: 5%;
+		    }
+
+		    .closebtn {
+		        top: 20px;
+		        right: 20px;
+		        font-size: 40px;
+		    }
+
+		    .contenido-menu a {
+		        padding: 10px;
+		        margin: 10px 80px 10px 80px;
+		        font-size: 1.1em;
+		    }
+
+		    #logo {
+		        width: 20%;
+		    }
+
+		    .boton-menu{
+		        font-size: 2em;
+		    }
+
+		    .contenido-inicio {
+		        width: 90%;
+		        margin-top: 3%;
+		        padding-bottom: 5%;
+		    }
+
+		    .contenido-inicio h1 {
+		        font-size: 1.3em;
+		    }
+
+		    .contenido-inicio p {
+		        font-size: 1em;
+		        padding-top: 6%;
+		    }
+
+		    #grafico-inicio {
+		        width: 76%;
+		    }
+
+		    #botonCodigo {
+		        font-size: 1em;
+		        border-radius: 10px;
+		        padding: 15px 16px;
+		        margin-top: 20%;
+		    }
+
+		    #imagen-footer {
+		        width: 20%;
+		    }
+
+		    .copyrigt {
+		        font-size: 0.7em;
+		    }
+		}
