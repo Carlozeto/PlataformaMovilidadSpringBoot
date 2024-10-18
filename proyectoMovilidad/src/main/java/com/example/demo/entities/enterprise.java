@@ -11,6 +11,9 @@ public class enterprise {
 	    private String enterpriseName;
 	    private String enterpriseNIT;
 
+	    public enterprise() {
+	    	super();
+	    }
 	    
 	    public enterprise(String enterpriseName, String enterpriseNIT) {
 			super();

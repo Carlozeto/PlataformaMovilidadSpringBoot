@@ -13,6 +13,10 @@ public class route {
 	private String routeCol;
 	private int routeRouteAreaId;
 	
+	public route(){
+		super();
+	}
+	
 	public route(String routeName, String routeBoard, String routeCol, int routeRouteAreaId) {
 		super();
 		this.routeName = routeName;

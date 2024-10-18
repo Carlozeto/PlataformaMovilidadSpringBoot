@@ -72,13 +72,17 @@
 		  	<div id="busDriverIdDesc" class="form-text">Input the bus driver identification.</div>
 		  </div>
 		  <div class="mb-3">
-		  	<label for="busEnterpriseId" class="form-label">Bus Enterprise Id</label>
-		  	<input type="text" class="form-control" id="busEnterpriseId" aria-describedby="busEnterpriseIdDesc" th:field="*{busEnterpriseId}">
+		  	<label for="busEnterpriseId" class="form-label">Bus Enterprise</label>
+			<select class="form-select" aria-label="Default select example" name="busEnterpriseId" id="busEnterpriseId" th:field="*{busEnterpriseId}">
+				<option th:each="ent:${enterprise}" th:value="${ent.enterpriseId}" th:text="${ent.enterpriseName}"></option>
+			</select>
 		  	<div id="busEnterpriseIdDesc" class="form-text">Input the bus enterprise identification.</div>
 		  </div>
 		  <div class="mb-3">
-		  	<label for="busRouteId" class="form-label">Bus Route Id</label>
-		  	<input type="text" class="form-control" id="busRouteId" aria-describedby="busRouteIdDesc" th:field="*{busRouteId}">
+		  	<label for="busRouteId" class="form-label">Bus Route</label>
+			<select class="form-select" aria-label="Default select example" name="busRouteId" id="busRouteId" th:field="*{busRouteId}">
+					<option th:each="route:${route}" th:value="${route.routeId}" th:text="${route.routeName}"></option>
+			</select>
 		  	<div id="busRouteIdDesc" class="form-text">Input the bus route identification.</div>
 		  </div>	  
 		  <button type="submit" class="btn btn-primary">Submit</button>
