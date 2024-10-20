@@ -10,25 +10,31 @@ public class parade {
 	 private int paradeId;
 	    private String paradeName;
 	    private String latitude;
-	    private String longtitude;
-	    private String routeId;
+	    private String longitude;
+	    private String link;
 
 	    
-	    public parade(String paradeName, String latitude, String longtitude, String routeId) {
+	    
+	    public parade() {
 			super();
-			this.paradeName = paradeName;
-			this.latitude = latitude;
-			this.longtitude = longtitude;
-			this.routeId = routeId;
 		}
 
 
-		public parade (int paradeId, String paradeName, String latitude, String longtitude, String routeId) {
+		public parade(String paradeName, String latitude, String longitude, String link) {
+			super();
+			this.paradeName = paradeName;
+			this.latitude = latitude;
+			this.longitude = longitude;
+			this.link = link;
+		}
+
+
+		public parade (int paradeId, String paradeName, String latitude, String longitude, String link) {
 	        this.paradeId = paradeId;
 	        this.paradeName = paradeName;
 	        this.latitude = latitude;
-	        this.longtitude = longtitude;
-	        this.routeId = routeId;
+	        this.longitude = longitude;
+	        this.link = link;
 	    }
 
 
@@ -62,23 +68,23 @@ public class parade {
 		}
 
 
-		public String getLongtitude() {
-			return longtitude;
+		public String getlongitude() {
+			return longitude;
 		}
 
 
-		public void setLongtitude(String longtitude) {
-			this.longtitude = longtitude;
+		public void setlongitude(String longitude) {
+			this.longitude = longitude;
 		}
 
 
-		public String getRouteId() {
-			return routeId;
+		public String getlink() {
+			return link;
 		}
 
 
-		public void setRouteId(String routeId) {
-			this.routeId = routeId;
+		public void setlink(String link) {
+			this.link = link;
 		}
 	
 		

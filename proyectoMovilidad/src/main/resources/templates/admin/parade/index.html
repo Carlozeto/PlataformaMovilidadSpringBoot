@@ -3,7 +3,7 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head>
-	<title>Management Bus</title>
+	<title>Management Route</title>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -19,40 +19,25 @@
 	           <span href="javascript:void(0)" class="closebtn" onclick="cerrarmenu()" id="closeBtn" >&times;</span>
 	          <div class="contenido-menu">
 	              <a href="/">Inicio</a>
-<!--	         <a href="">¿Por qué elegirnos?</a>
-	              <a href="">Consulta tu código</a>-->	
+	         <a href="/searchBus">Busca tu buseta</a>
+	<!--	              <a href="">Consulta tu código</a>-->	
 	          </div>
 	      </div>
-	</header>
+</header>
 <body>
 	<div id="overlay-bg" class="overlay-bg"></div>
 	<div class="main-bg"></div>
 	<div class="overBg">
-		<div class="menu">
-			<div class="titleBus">
-			<h4 style="padding: 5px; margin-block-end: 0px;">Bus</h4>
-			</div>
-    		<a href="/formBus" id="addBus" class="btn btn-success" style="margin: 10px; left: 0;">New Bus</a>
-		</div>
-	<table class="table table-dark table-hover" style="text-align: center;">
-		<thead>
-			<th>Placa</th>
-			<th>Manufacturador</th>
-			<th>Modelo</th>
-			<th>Acciones</th>
-		</thead>
-		<tbody>
-			<tr th:each="bus:${bus}">
-				<td><font th:text="${bus.busPlaque}"></font></td>
-				<td><font th:text="${bus.busManufacturer}"></font></td>
-				<td><font th:text="${bus.busManufacturerModel}"></font></td>
-				<td>
-					<a th:href="@{/editBus/{busPlaque}(busPlaque=${bus.busPlaque})}" class="btn btn-info">Edit</a>
-					<a th:href="@{/deleteBus/{busPlaque}(busPlaque=${bus.busPlaque})}" class="btn btn-danger">Eliminar</a>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+		<h1>Origen</h1>
+		<select class="form-select" aria-label="Default select example" name="paradeId" id="paradeId">
+				<option th:each="parade:${parade}" th:value="${parade.paradeId}" th:text="${parade.paradeName}"></option>
+		</select>
+		<h1>Destino</h1>
+		<select class="form-select" aria-label="Default select example" name="paradeId" id="paradeId">
+						<option th:each="parade:${parade}" th:value="${parade.paradeId}" th:text="${parade.paradeName}"></option>
+		</select>
+		<br>
+		<button>Buscar</button>
 	</div>
 	<script src="menu.js"></script>
 </body>
