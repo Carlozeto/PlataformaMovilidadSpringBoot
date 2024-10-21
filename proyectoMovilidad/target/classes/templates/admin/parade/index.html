@@ -28,16 +28,22 @@
 	<div id="overlay-bg" class="overlay-bg"></div>
 	<div class="main-bg"></div>
 	<div class="overBg">
-		<h1>Origen</h1>
-		<select class="form-select" aria-label="Default select example" name="paradeId" id="paradeId">
-				<option th:each="parade:${parade}" th:value="${parade.paradeId}" th:text="${parade.paradeName}"></option>
-		</select>
-		<h1>Destino</h1>
-		<select class="form-select" aria-label="Default select example" name="paradeId" id="paradeId">
-						<option th:each="parade:${parade}" th:value="${parade.paradeId}" th:text="${parade.paradeName}"></option>
-		</select>
-		<br>
-		<button>Buscar</button>
+		<form th:action="@{/searchRoutes}" method="post">
+		    <h1>Origen</h1>
+		    <select class="form-select" aria-label="Default select example" name="originParadeId" id="originParadeId">
+		        <option th:each="parade:${parade}" th:value="${parade.paradeId}" th:text="${parade.paradeName}"></option>
+		    </select>
+		    <h1>Destino</h1>
+		    <select class="form-select" aria-label="Default select example" name="destinationParadeId" id="destinationParadeId">
+		        <option th:each="parade:${parade}" th:value="${parade.paradeId}" th:text="${parade.paradeName}"></option>
+		    </select>
+		    <br>
+		    <button type="submit">Buscar</button>
+			<br>
+			<div th:if="${errorMessage}" class="alert alert-danger" role="alert">
+			    <span th:text="${errorMessage}"></span>
+			</div>
+		</form>
 	</div>
 	<script src="menu.js"></script>
 </body>
