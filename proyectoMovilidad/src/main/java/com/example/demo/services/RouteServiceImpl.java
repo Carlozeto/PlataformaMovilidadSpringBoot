@@ -116,8 +116,14 @@ public class RouteServiceImpl implements RouteService {
 
 	@Override
 	public List<route> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		String query = "SELECT * FROM route";
+
+ Map<String, Integer> params = new HashMap<>();
+
+ Query nativeQuery = entityManager.createNativeQuery(query, route.class);
+ params.forEach(nativeQuery::setParameter);
+
+ return nativeQuery.getResultList();
 	}
 
 	@Override

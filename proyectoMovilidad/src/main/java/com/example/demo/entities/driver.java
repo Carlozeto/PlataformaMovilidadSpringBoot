@@ -11,6 +11,10 @@ public class driver {
     private String driverFirstName;
     private String driverLastName;
 
+    public driver() {
+    	
+    }
+    
     public driver (String driverId, String driverFirstName, String driverLastName) {
         this.driverId = driverId;
         this.driverFirstName = driverFirstName; 

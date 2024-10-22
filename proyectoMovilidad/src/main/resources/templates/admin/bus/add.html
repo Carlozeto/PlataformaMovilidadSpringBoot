@@ -79,12 +79,16 @@
 		  </div>
 		  <div class="mb-3">
 		  	<label for="busOwnerId" class="form-label">Bus Owner Id</label>
-		  	<input type="text" class="form-control" id="busOwnerId" aria-describedby="busOwnerIdDesc" th:field="*{busOwnerId}">
+			<select class="form-select" aria-label="Default select example" name="busOwnerId" id="busOwnerId" th:field="*{busOwnerId}">
+					<option th:each="owner:${owner}" th:value="${owner.ownerId}" th:text="${owner.ownerFirstName} + ' ' + ${owner.ownerLastName}"></option>
+			</select>
 		  	<div id="busOwnerIdDesc" class="form-text">Input the bus owner identification.</div>
 		  </div>
 		  <div class="mb-3">
 		  	<label for="busDriverId" class="form-label">Bus Driver Id</label>
-		  	<input type="text" class="form-control" id="busDriverId" aria-describedby="busDriverIdDesc" th:field="*{busDriverId}">
+			<select class="form-select" aria-label="Default select example" name="busDriverId" id="busDriverId" th:field="*{busDriverId}">
+				<option th:each="driver:${driver}" th:value="${driver.driverId}" th:text="${driver.driverFirstName} + ' ' + ${driver.driverLastName}"></option>
+			</select>
 		  	<div id="busDriverIdDesc" class="form-text">Input the bus driver identification.</div>
 		  </div>
 		  <div class="mb-3">

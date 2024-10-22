@@ -13,10 +13,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.entities.bus;
+import com.example.demo.entities.driver;
 import com.example.demo.entities.enterprise;
+import com.example.demo.entities.owner;
 import com.example.demo.entities.route;
 import com.example.demo.services.BusService;
+import com.example.demo.services.DriverService;
 import com.example.demo.services.EnterpriseService;
+import com.example.demo.services.OwnerService;
 import com.example.demo.services.RouteService;
 
 @Controller
@@ -28,7 +32,11 @@ public class BusController{
 	public EnterpriseService enterpriseService;
 	@Autowired
 	public RouteService routeService;
-
+	@Autowired
+	public OwnerService ownerService;
+	@Autowired
+	public DriverService driverService;
+	
 	@GetMapping({"/listBus", "/"})
 	public String listBus(Model model) {
 		try {
@@ -47,8 +55,13 @@ public class BusController{
 		try {
 		List<enterprise> listEnterprise = enterpriseService.findAll();
 		model.addAttribute("enterprise", listEnterprise);
+		List<owner> listOwner = ownerService.findAll();
+		model.addAttribute("owner", listOwner);
+		List<driver> listDriver = driverService.findAll();
+		model.addAttribute("driver", listDriver);
 		List<route> listRoute = routeService.findAll();
 		model.addAttribute("route", listRoute);
+		System.out.println(listRoute);
 		}
 		catch(Exception e) {
 			System.out.println("Error: "+e);
@@ -75,6 +88,10 @@ public class BusController{
 				model.addAttribute("enterprise", listEnterprise);
 				List<route> listRoute = routeService.findAll();
 				model.addAttribute("route", listRoute);
+				List<owner> listOwner = ownerService.findAll();
+				model.addAttribute("owner", listOwner);
+				List<driver> listDriver = driverService.findAll();
+				model.addAttribute("driver", listDriver);
 				}
 				catch(Exception e) {
 					System.out.println("Error: "+e);
