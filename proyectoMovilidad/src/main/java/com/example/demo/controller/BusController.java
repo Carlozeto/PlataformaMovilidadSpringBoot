@@ -49,7 +49,6 @@ public class BusController{
 		return "admin/bus/index";
 	}
 
-	
 	@GetMapping("/formBus")
 	public String mostrarFormulario(Model model) { 
 		try {
@@ -61,7 +60,6 @@ public class BusController{
 		model.addAttribute("driver", listDriver);
 		List<route> listRoute = routeService.findAll();
 		model.addAttribute("route", listRoute);
-		System.out.println(listRoute);
 		}
 		catch(Exception e) {
 			System.out.println("Error: "+e);

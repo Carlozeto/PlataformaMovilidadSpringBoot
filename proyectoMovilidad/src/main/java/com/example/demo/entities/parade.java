@@ -68,12 +68,12 @@ public class parade {
 		}
 
 
-		public String getlongitude() {
+		public String getLongitude() {
 			return longitude;
 		}
 
 
-		public void setlongitude(String longitude) {
+		public void setLongitude(String longitude) {
 			this.longitude = longitude;
 		}
 

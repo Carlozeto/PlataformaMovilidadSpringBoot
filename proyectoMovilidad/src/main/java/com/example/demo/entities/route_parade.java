@@ -10,6 +10,10 @@ public class route_parade {
 	private int routeId;
 	private int paradeId;
 	
+	public route_parade() {
+		super();
+	}
+	
 	public route_parade(int routeId, int paradeId) {
 		super();
 		this.routeId = routeId;

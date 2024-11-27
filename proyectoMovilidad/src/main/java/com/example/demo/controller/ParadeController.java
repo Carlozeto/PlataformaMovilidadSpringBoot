@@ -71,5 +71,68 @@ public class ParadeController {
 	    return "admin/route/results"; 
 	}
 	
+	  @GetMapping("/listParade")
+	    public String listParade(Model model) {
+	        try {
+	            List<parade> listParade = paradeService.findAll();
+	            model.addAttribute("parade", listParade);
+	        } catch (Exception e) {
+	            System.out.println("Error: " + e);
+	        }
+	        return "admin/parade/list";
+	   }
+	  
+    @GetMapping("/formParade")
+    public String mostrarFormulario(Model model) {
+        parade parade1 = new parade();
+        model.addAttribute("parade", parade1);
+        return "admin/parade/add";
+    }
+
+    @PostMapping("/addParade")
+    public String addParade(@ModelAttribute("parade") parade Parade) {
+        paradeService.save(Parade);
+        return "redirect:/listParade";
+    }
+
+    @GetMapping("/editParade/{id}")
+    public String editParade(@PathVariable("id") int id, Model model) {
+        try {
+            Optional<parade> parade = paradeService.findById(id);
+            if (parade.isPresent()) {
+                model.addAttribute("parade", parade.get());
+                return "admin/parade/edit";
+            } else {
+                return "redirect:/listParade";
+            }
+        } catch (Exception e) {
+            System.out.println("Error al obtener la parada: " + e);
+            return "redirect:/listParade";
+        }
+    }
+
+    @PostMapping("/updateParade/{id}")
+    public String updateParade(@PathVariable("id") int id, @ModelAttribute("parade") parade Parade, Model model) {
+        Optional<parade> paradeFind = paradeService.findById(id);
+        if (paradeFind.isPresent()) {
+            parade paradeUpd = paradeFind.get();
+            paradeUpd.setParadeName(Parade.getParadeName());
+            paradeUpd.setLatitude(Parade.getLatitude());
+            paradeUpd.setLongitude(Parade.getLongitude());
+            paradeUpd.setlink(Parade.getlink());
+            paradeService.save(paradeUpd);
+        }
+        return "redirect:/listParade";
+    }
+
+    @GetMapping("/deleteParade/{id}")
+    public String deleteParade(@PathVariable("id") int id) {
+        try {
+            paradeService.deleteById(id);
+        } catch (Exception e) {
+            System.out.println("Error al eliminar la parada: " + e);
+        }
+        return "redirect:/listParade";
+    }
 
 }
